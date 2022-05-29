@@ -1,0 +1,23 @@
+body {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: minmax(180px, 18vh) 1fr;
+	grid-template-areas: 
+		'sidebar top-bar'
+		'sidebar main';
+}
+
+.top-bar {
+	background-color: var(--clr-light);
+	grid-area: top-bar;
+}
+
+.sidebar {
+	background-color: var(--clr-primary);
+	grid-area: sidebar;
+}
+
+.main {
+	background-color: var(--clr-gray);
+	grid-area: main;
+}
