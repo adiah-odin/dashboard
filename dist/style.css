@@ -277,6 +277,7 @@ body {
   width: 98%;
   justify-self: flex-end;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   display: flex;
@@ -314,7 +315,65 @@ body {
 }
 
 .menu {
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  gap: 2.375rem;
+}
+
+.announcements__container {
+  background-color: var(--clr-light);
+  border-radius: 0.5rem;
+  padding-inline: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: flex;
+  flex-direction: column;
+}
+.announcements__container .item {
+  padding-block: 1rem;
+}
+.announcements__container .item:not(:last-of-type) {
+  border-bottom: 1px solid var(--clr-divider);
+}
+.announcements__container .item__header {
+  font-size: 1rem;
+}
+.announcements__container .item__body {
+  color: var(--clr-text-gray);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.trending__container {
+  background-color: var(--clr-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3125rem;
+}
+.trending__container .item {
+  display: grid;
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+  grid-template-columns: 25% 1fr;
+  grid-template-areas: "profile-pic username" "profile-pic title";
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--clr-text-gray);
+}
+.trending__container .item__img {
+  grid-area: profile-pic;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: salmon;
+  align-self: center;
+}
+.trending__container .item__username {
+  grid-area: username;
+}
+.trending__container .item__title {
+  grid-area: title;
 }
 
 .sr-only {
